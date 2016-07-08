@@ -1,5 +1,6 @@
 package com.example.ozner.mvpdemo.Buletooth;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,6 +14,7 @@ import com.example.ozner.mvpdemo.R;
 import com.example.ozner.mvpdemo.Update.CheckVersionCodeUtil;
 import com.example.ozner.mvpdemo.Update.HttpHelper.bean.NetJsonObject;
 import com.example.ozner.mvpdemo.Update.OznerUpdateManager;
+import com.example.ozner.mvpdemo.Update.UpdateActivity;
 import com.example.ozner.mvpdemo.Utils.LogUtilsLC;
 import com.example.ozner.mvpdemo.Utils.MessageHelper;
 
@@ -88,7 +90,22 @@ public class BluetoothUUIDActivity extends AppCompatActivity implements View.OnC
 
                                 if (netVersionCode > CheckVersionCodeUtil.getVersionCode(BluetoothUUIDActivity.this)) {
 //                                    showNoticeDialog(updateCon);
-                                    MessageHelper.showMsgDialog(BluetoothUUIDActivity.this, "有新版本");
+                                    // TODO: 2016/7/8 调用下载方法
+                                    //开始下载更新
+                                    {
+                                        Intent updateIntent = new Intent(BluetoothUUIDActivity.this, UpdateActivity.class);
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString("downloadurl", downLoadUrl);
+                                        bundle.putInt("mustupdate", isMustUpdate);
+                                        bundle.putString("updatecon", "updatecon");
+                                        bundle.putString("installPackageName", instalPackageName);
+                                        updateIntent.putExtras(bundle);
+                                        if (updateIntent.resolveActivity(getPackageManager()) != null) {
+                                            startActivity(updateIntent);
+                                        }
+                                    }
+
+//                                    MessageHelper.showMsgDialog(BluetoothUUIDActivity.this, "有新版本");
                                 } else {
                                     MessageHelper.showToastCenter(BluetoothUUIDActivity.this, getString(R.string.soft_update_no));
                                 }

@@ -71,7 +71,9 @@
         <!-- </receiver> -->
         <activity android:name=".FilterProgressActivity" />
         <activity android:name=".Buletooth.BluetoothUUIDActivity" />
-        <activity android:name=".Update.UpdateActivity"></activity>
+        <activity
+            android:name=".Update.UpdateActivity"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert"></activity>
     </application>
 
 </manifest>
