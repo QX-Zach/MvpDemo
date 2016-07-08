@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="library-2.1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/akiyama.swipe/library/2.1/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/akiyama.swipe/library/2.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$APPLICATION_HOME_DIR$/gradle/gradle-2.8/caches/modules-2/files-2.1/akiyama.swipe/library/2.1/2a585b90b2550728d6e7b1f1a0b92db37da46838/library-2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

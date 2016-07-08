@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.example.ozner.mvpdemo.Buletooth.BuletoothScanActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="显示已配对设备"
+            android:id="@+id/btn_showhas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_sanBuletooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="扫描周围蓝牙设备" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="扫描结果" />
+
+    <TextView
+        android:id="@+id/tv_scanresule"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
