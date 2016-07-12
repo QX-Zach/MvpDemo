@@ -15,6 +15,7 @@ import com.example.ozner.mvpdemo.Update.CheckVersionCodeUtil;
 import com.example.ozner.mvpdemo.Update.HttpHelper.bean.NetJsonObject;
 import com.example.ozner.mvpdemo.Update.OznerUpdateManager;
 import com.example.ozner.mvpdemo.Update.UpdateActivity;
+import com.example.ozner.mvpdemo.Update.UpdateVersionManager;
 import com.example.ozner.mvpdemo.Utils.LogUtilsLC;
 import com.example.ozner.mvpdemo.Utils.MessageHelper;
 
@@ -30,9 +31,9 @@ public class BluetoothUUIDActivity extends AppCompatActivity implements View.OnC
     private static final int Input = 0xfff2;
     private static final int Output = 0xfff1;
     private static final int CFGClient = 0x2902;
-    Button btn_checkUpdate, btn_newUpdate;
+    Button btn_checkUpdate, btn_newUpdate, btn_showMime;
     private boolean isChecking = false;
-
+    UpdateVersionManager updateManager = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +44,11 @@ public class BluetoothUUIDActivity extends AppCompatActivity implements View.OnC
         Log.e(TAG, "onCreate: CFGClient ---> UUID:" + getUUID(CFGClient).toString());
         btn_checkUpdate = (Button) findViewById(R.id.btn_checkUpdate);
         btn_newUpdate = (Button) findViewById(R.id.btn_newUpdate);
+        findViewById(R.id.btn_showMime).setOnClickListener(this);
         btn_checkUpdate.setOnClickListener(this);
         btn_newUpdate.setOnClickListener(this);
+
+
     }
 
     private UUID getUUID(int id) {
@@ -66,7 +70,14 @@ public class BluetoothUUIDActivity extends AppCompatActivity implements View.OnC
                     Toast.makeText(BluetoothUUIDActivity.this, "正在检查更新", Toast.LENGTH_SHORT).show();
                 }
                 break;
+            case R.id.btn_showMime:
+
+                break;
         }
+    }
+
+    public void showMimeList(){
+
     }
 
     Handler mHandler = new Handler() {
@@ -91,6 +102,9 @@ public class BluetoothUUIDActivity extends AppCompatActivity implements View.OnC
                                 if (netVersionCode > CheckVersionCodeUtil.getVersionCode(BluetoothUUIDActivity.this)) {
 //                                    showNoticeDialog(updateCon);
                                     // TODO: 2016/7/8 调用下载方法
+
+//                                    updateManager = new UpdateVersionManager(BluetoothUUIDActivity.this,downLoadUrl);
+//                                    updateManager.checkUpdateInfo();
                                     //开始下载更新
                                     {
                                         Intent updateIntent = new Intent(BluetoothUUIDActivity.this, UpdateActivity.class);

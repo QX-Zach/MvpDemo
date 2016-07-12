@@ -23,4 +23,11 @@
         android:text="检查更新new"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/btn_showMime"
+        android:textAllCaps="false"
+        android:text="查看MimeType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
