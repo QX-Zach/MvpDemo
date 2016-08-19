@@ -4,6 +4,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
+
+import com.example.ozner.mvpdemo.R;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +18,7 @@ import java.util.Map;
  */
 public class NetErrDecode {
     private static Map<Integer, String> ErrMap = new HashMap<>();
+    private static View customView = null;
 
     static {
         ErrMap.put(-1, "网络请求失败，请检查网络是否连接");
@@ -101,6 +107,34 @@ public class NetErrDecode {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
+        }
+    }
+
+    public static void ShowErrMsgDialog(Context context, int errCode, String errMsg, String defMsg) {
+        try {
+            if (errCode != 0) {
+                if (customView == null) {
+                    customView = LayoutInflater.from(context).inflate(R.layout.msg_dialog_view, null);
+                }
+                StringBuilder sb = new StringBuilder();
+                final AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+                TextView tv_ensure = (TextView) customView.findViewById(R.id.tv_btnEnsure);
+                tv_ensure.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.cancel();
+                    }
+                });
+                alertDialog.setView(customView);
+//                if (ErrMap.containsKey(errCode)) {
+//                    sb.
+//                }
+                alertDialog.show();
+
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
         }
     }
 

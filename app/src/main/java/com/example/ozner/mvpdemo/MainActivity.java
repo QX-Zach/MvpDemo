@@ -14,6 +14,7 @@ import com.example.ozner.mvpdemo.DateFormatTest.DateUtilsActivity;
 import com.example.ozner.mvpdemo.Login.LoginActivity;
 import com.example.ozner.mvpdemo.SwipeMenu.SwipeMenu_1Activity;
 import com.example.ozner.mvpdemo.SysDownload.DownloadTestActivity;
+import com.example.ozner.mvpdemo.Utils.NetErrDecode;
 import com.example.ozner.mvpdemo.ViewTest.BoardActivity;
 import com.example.ozner.mvpdemo.ViewTest.FlipViewActivity;
 import com.example.ozner.mvpdemo.W3CSchool.LightingColorFilterActivity;
@@ -58,6 +59,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Button btnCheckLanguage;
     @InjectView(R.id.btn_btUUID)
     Button btnBtUUID;
+    @InjectView(R.id.btn_progressNotify)
+    Button btnProgressNotify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         btnFilter.setOnClickListener(this);
         btnCheckLanguage.setOnClickListener(this);
         btnBtUUID.setOnClickListener(this);
+        btnProgressNotify.setOnClickListener(this);
     }
 
     @Override
@@ -101,7 +105,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(new Intent(this, FlipViewActivity.class));
                 break;
             case R.id.btn_encodeUrl:
-
+                NetErrDecode.ShowErrMsgDialog(this, -10024, "附加信息", "默认信息");
                 break;
             case R.id.btn_slip_list:
                 startActivity(new Intent(this, SwipeMenu_1Activity.class));
@@ -155,12 +159,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.btn_btUUID:
                 Intent blueUUIDIntent = new Intent(this, BluetoothUUIDActivity.class);
-                if(blueUUIDIntent.resolveActivity(getPackageManager())!=null){
+                if (blueUUIDIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(blueUUIDIntent);
-                }else {
+                } else {
                     Log.e(TAG, "onClick: btn_btUUID:Activity Not Found");
                     Toast.makeText(MainActivity.this, "Application not exits", Toast.LENGTH_SHORT).show();
                 }
+                break;
+            case R.id.btn_progressNotify:
+                Log.i(TAG, "onClick: 应用间广播");
+                sendBroadcast(new Intent("com.persional.lingchen.AndroidLearn.TestBroad"));
                 break;
         }
     }

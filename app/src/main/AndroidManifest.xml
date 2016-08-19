@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ozner.mvpdemo">
+          package="com.example.ozner.mvpdemo">
 
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     《
-    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
-    <uses-permission-sdk-23 android:name="android.permission.BLUETOOTH" />
-    <uses-permission-sdk-23 android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission-sdk-23 android:name="android.permission.BLUETOOTH"/>
+    <uses-permission-sdk-23 android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <application
         android:name=".BaseApplication"
@@ -35,23 +35,23 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Login.LoginActivity" />
-        <activity android:name=".ViewTest.BoardActivity" />
-        <activity android:name=".ViewTest.SelectShowImgActivity" />
-        <activity android:name=".ViewTest.ViewSwitcherActivity" />
-        <activity android:name=".ViewTest.FlipViewActivity" />
-        <activity android:name=".Buletooth.BuletoothScanActivity" />
-        <activity android:name=".Buletooth.BluetoothScan_2_Activity" />
-        <activity android:name=".DateFormatTest.DateUtilsActivity" />
-        <activity android:name=".PermissTestActivity" />
-        <activity android:name=".W3CSchool.LightingColorFilterActivity" />
-        <activity android:name=".SwipeMenu.SwipeMenu_1Activity" />
-        <activity android:name=".SysDownload.DownloadTestActivity" />
+        <activity android:name=".Login.LoginActivity"/>
+        <activity android:name=".ViewTest.BoardActivity"/>
+        <activity android:name=".ViewTest.SelectShowImgActivity"/>
+        <activity android:name=".ViewTest.ViewSwitcherActivity"/>
+        <activity android:name=".ViewTest.FlipViewActivity"/>
+        <activity android:name=".Buletooth.BuletoothScanActivity"/>
+        <activity android:name=".Buletooth.BluetoothScan_2_Activity"/>
+        <activity android:name=".DateFormatTest.DateUtilsActivity"/>
+        <activity android:name=".PermissTestActivity"/>
+        <activity android:name=".W3CSchool.LightingColorFilterActivity"/>
+        <activity android:name=".SwipeMenu.SwipeMenu_1Activity"/>
+        <activity android:name=".SysDownload.DownloadTestActivity"/>
 
         <!-- <receiver -->
 
@@ -69,11 +69,15 @@
 
 
         <!-- </receiver> -->
-        <activity android:name=".FilterProgressActivity" />
-        <activity android:name=".Buletooth.BluetoothUUIDActivity" />
+        <activity android:name=".FilterProgressActivity"/>
+        <activity android:name=".Buletooth.BluetoothUUIDActivity"/>
         <activity
             android:name=".Update.UpdateActivity"
-            android:theme="@style/Theme.AppCompat.Dialog.Alert"></activity>
+            android:theme="@style/Theme.AppCompat.Dialog.Alert"/>
+        <activity android:name=".FlatBufferTest.FlatBufferTestActivity">
+        </activity>
+        <activity android:name=".HtmlFormattest.HtmlFormatActivity">
+        </activity>
     </application>
 
 </manifest>
