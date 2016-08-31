@@ -65,6 +65,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
         setListener();
+        //this is test
+        //this is second test
     }
 
     public void setListener() {
